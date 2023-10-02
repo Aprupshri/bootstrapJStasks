@@ -1,0 +1,22 @@
+.nav{
+    background-color: gray;
+}
+.nav-link{
+    color: aliceblue;
+}
+.container-fluid{
+    background-color: gray;
+}
+.workspace{
+    background-color: whitesmoke;
+    text-align:center;
+    width: 90%;
+    height:100vh;
+}
+.sidebar{
+    width:12.35%;
+    height: 100vh;
+    background-color: rgb(66, 62, 62);
+    color:white;
+    text-align: center;
+}

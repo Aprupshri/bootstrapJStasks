@@ -1,0 +1,19 @@
+.nav-link{
+    color: white;
+    float: left;
+}
+.nav-link:hover{
+    color:rgb(255, 196, 0)
+}
+.subtext{
+    font-size: smaller;
+}
+
+.btn{
+    color: white;
+    float: left;
+}
+
+.firstcontainer{
+    padding: 100%;
+}

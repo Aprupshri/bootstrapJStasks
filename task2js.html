@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    Enter the string: <input id="str" type="text"><br><br>
+    The reversed string is <span id="reversedstr"></span>
+    <br><br>
+    <button type="button" onclick="stringreverse()">Submit</button>
+    <script>
+        function stringreverse(){
+            var a=document.getElementById("str").value;
+            reversedstr=a.split('').reverse().join('');
+            document.getElementById("reversedstr").innerHTML=reversedstr;
+        }
+
+    </script>
+</body>
+</html>

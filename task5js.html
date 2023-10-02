@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+    <form id="Form" novalidate>
+        <table>
+          <tr>
+            <td>
+              <label for="name">Name:</label>
+            </td>
+            <td>
+              <input id="name" type="text" required /> <span class="error" id="nameError"></span>
+            </td>
+          </tr>
+          <tr>
+              <td>
+                  <label for="email">Email:</label>
+              </td>
+              <td>
+              <input id="email" type="email" required /> <span class="error" id="emailError"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <label for="website">Website:</label>
+                  
+              </td>
+              <td>
+                  <input id="website" type="url" required /> <span class="error"  id="websiteError"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <label for="message">Message:</label>
+              </td>
+              <td>
+                  <textarea id="message" required></textarea> <span class="error" id="messageError"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              </td>
+              <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+      </form>
+  <script>
+    const Form = document.getElementById('Form');
+
+    Form.addEventListener('submit', function (e) {
+      let valid = true;
+
+      const name = document.getElementById('name').value;
+      if (name.trim() === '') {
+        document.getElementById('nameError').textContent = 'Name is required';
+        document.getElementById('name').style.borderColor="red";
+        valid = false;
+      } else {
+        document.getElementById('nameError').textContent = '';
+        document.getElementById('name').style.borderColor="black";
+      }
+
+      const email = document.getElementById('email').value;
+      if (email.trim() === '') {
+        document.getElementById('emailError').textContent = 'Email is required';
+        document.getElementById('email').style.borderColor="red";
+        valid = false;
+      } else if (!isValidEmail(email)) {
+        document.getElementById('emailError').textContent = 'A valid email is required';
+        document.getElementById('email').style.borderColor="red";
+        valid = false;
+      } else {
+        document.getElementById('emailError').textContent = '';
+        document.getElementById('email').style.borderColor="black";
+      }
+
+      const website = document.getElementById('website').value;
+      if (website.trim() === '') {
+        document.getElementById('websiteError').textContent = 'Website is required';
+        document.getElementById('website').style.borderColor="red";
+        valid = false;
+      } else if (!isValidURL(website)) {
+        document.getElementById('websiteError').textContent = 'A valid URL is required';
+        document.getElementById('website').style.borderColor="red";
+        valid = false;
+      } else {
+        document.getElementById('websiteError').textContent = '';
+        document.getElementById('website').style.borderColor="black";
+      }
+
+      const message = document.getElementById('message').value;
+      if (message.trim() === '') {
+        document.getElementById('messageError').textContent = 'This field is required';
+        document.getElementById('message').style.borderColor="red";
+        valid = false;
+      } else {
+        document.getElementById('messageError').textContent = '';
+        document.getElementById('message').style.borderColor="black";
+      }
+
+      if (!valid) {
+        e.preventDefault();
+      }
+    });
+
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    function isValidURL(url) {
+      try {
+        new URL(url);
+        return true;
+      } catch (error) {
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>

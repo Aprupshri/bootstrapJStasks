@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 7</title>
+    <style>
+      h1 {
+        color: rgb(46, 18, 174);
+      }
+      #image {
+        height: 20px;
+        width: 20px;
+        padding-top: 50px;
+        position: relative;
+        animation: trainanime 3s infinite;
+        animation-play-state: paused;
+      }
+
+      @keyframes trainanime {
+        from {
+          left: -55px;
+        }
+        to {
+          left: 95%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="image">
+      <img src="train.png" alt="" style="width: 260px" height="200px" />
+    </div>
+    <div class="container " style="text-align: center;  padding-top: 200px">
+        <h1>Click the following button to handle animation</h1>
+        <button style="height: 30px; width: 80px;margin-right:10px;" onclick="starting()">
+          Start
+        </button>
+        <button style="height: 30px; width: 80px" onclick="stoping() ">
+          Stop
+        </button>
+    </div>
+
+    <script>
+      function starting() {
+        document.getElementById("image").style.animationPlayState = "running";
+      }
+
+      function stoping() {
+        document.getElementById("image").style.animationPlayState = "paused";
+      }
+    </script>
+  </body>
+</html>

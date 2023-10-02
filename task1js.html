@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <script>
+      var num=prompt("Enter the number you want to reverse.");
+      function reverseNumber(num){
+        return parseInt(num.toString().split('').reverse().join(''));
+      }
+      document.write("The reversed number is "+reverseNumber(num));
+    </script>
+  </body>
+</html>
